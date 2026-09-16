@@ -232,38 +232,7 @@ export default function Register() {
               </div>
             </div>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="btn-primary w-full py-3 mt-4 text-sm"
-            >
-              {loading ? (
-                <span className="flex items-center gap-2 justify-center">
-                  <svg className="animate-spin" width="14" height="14" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" className="opacity-25" />
-                    <path d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" fill="currentColor" className="opacity-75" />
-                  </svg>
-                  Creating Account...
-                </span>
-              ) : (
-                <span className="flex items-center gap-2 justify-center">
-                  Create Account
-                  <ArrowRight size={14} />
-                </span>
-              )}
-            </button>
-
-            <div className="text-center text-sm text-[var(--text-secondary)] pt-1 pb-2">
-              Already have an account?{" "}
-              <Link
-                href="/login"
-                className="font-semibold text-[var(--honey-600)] hover:text-[var(--honey-700)] transition-colors"
-              >
-                Sign In
-              </Link>
-            </div>
-
-            <div className="pt-3 border-t border-[var(--border-default)]">
+            <div>
               <label className="block text-xs font-semibold text-[var(--text-secondary)] mb-2">
                 Your Role
               </label>
@@ -287,7 +256,38 @@ export default function Register() {
                 ))}
               </div>
             </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="btn-primary w-full py-3 mt-4 text-sm"
+            >
+              {loading ? (
+                <span className="flex items-center gap-2 justify-center">
+                  <svg className="animate-spin" width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" className="opacity-25" />
+                    <path d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" fill="currentColor" className="opacity-75" />
+                  </svg>
+                  Creating Account...
+                </span>
+              ) : (
+                <span className="flex items-center gap-2 justify-center">
+                  Create Account
+                  <ArrowRight size={14} />
+                </span>
+              )}
+            </button>
           </form>
+
+          <div className="mt-6 text-center text-sm text-[var(--text-secondary)]">
+            Already have an account?{" "}
+            <Link
+              href="/login"
+              className="font-semibold text-[var(--honey-600)] hover:text-[var(--honey-700)] transition-colors"
+            >
+              Sign In
+            </Link>
+          </div>
         </div>
       </div>
     </div>
