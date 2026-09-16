@@ -81,25 +81,44 @@ export default function Register() {
               </span>
             </Link>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 border border-white/25 text-xs font-semibold tracking-wide uppercase mb-3">
-              <span>🏛️</span>
-              <span>Ministry of MSME · KVIC Honey Mission</span>
+            <div className="flex flex-wrap items-center gap-2 mb-3">
+              <span className="px-3 py-1 rounded-full bg-white/15 border border-white/25 text-[11px] font-bold tracking-wider uppercase">
+                🏛️ SIH Problem Statement ID: 26021
+              </span>
+              <span className="px-2.5 py-1 rounded-full bg-amber-500/20 border border-amber-300/30 text-[11px] font-semibold text-amber-100">
+                Ministry of MSME · KVIC
+              </span>
             </div>
 
             <h1 className="font-[family-name:var(--font-outfit)] text-3xl xl:text-4xl font-bold leading-tight">
-              Blockchain Honey Traceability & Smart Beekeeping
+              HoneyChain: Smart Beekeeping & Blockchain Traceability
             </h1>
             <p className="text-white/85 mt-2.5 text-sm leading-relaxed">
-              Problem Statement ID: 26021 — Supporting rural beekeepers with non-invasive acoustic disease detection, batch provenance, and consumer trust.
+              Engineered for KVIC&apos;s Honey Mission — eliminating counterfeit honey adulteration and hive colony loss through ₹1,100 solar IoT nodes, IEEE bioacoustic AI, and cryptographic farm-to-jar batch provenance.
             </p>
+
+            <div className="space-y-2 pt-2 text-xs text-white/90">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-300 shrink-0" />
+                <span><strong>Zero-Camera IoT (₹1,100 BOM):</strong> Acoustic sensing solves lens propolis coating and bee blindness.</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 shrink-0" />
+                <span><strong>IEEE Bioacoustic ML:</strong> 87.4% ROC-AUC Varroa mite detection via spectral entropy.</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-300 shrink-0" />
+                <span><strong>Cryptographic Provenance:</strong> SHA-256 hash notary on-chain with consumer QR verification.</span>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-3 pt-1">
             {[
-              { value: "87.4%", label: "IEEE Bioacoustic ML", detail: "Varroa Mite ROC-AUC" },
-              { value: "₹1,100", label: "Solar IoT Hardware", detail: "Zero-Camera Hive Node" },
-              { value: "38", label: "KVIC Field Offices", detail: "MSME Cluster Network" },
-              { value: "< 20%", label: "FSSAI Compliance", detail: "Pure Moisture Standard" },
+              { value: "87.4%", label: "Bioacoustic ML", detail: "Varroa Mite ROC-AUC (IEEE 8718621)" },
+              { value: "₹1,100", label: "Solar IoT Node", detail: "Zero-Camera Hardware BOM" },
+              { value: "< 20%", label: "FSSAI Pure Moisture", detail: "HMF < 80mg · 0% Added Sugar" },
+              { value: "SHA-256", label: "On-Chain Notary", detail: "Immutable Batch Hash Provenance" },
             ].map((stat) => (
               <div key={stat.label} className="p-3.5 rounded-[var(--radius-lg)] bg-white/10 backdrop-blur-sm border border-white/15 shadow-xs">
                 <p className="text-xl font-bold font-[family-name:var(--font-outfit)]">{stat.value}</p>
