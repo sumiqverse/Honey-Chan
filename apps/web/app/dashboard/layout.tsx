@@ -209,7 +209,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <aside
         className={`${
           sidebarOpen ? "translate-x-0 w-64" : "-translate-x-full w-64 md:translate-x-0 md:w-[72px]"
-        } sidebar fixed inset-y-0 left-0 z-40 flex shrink-0 flex-col md:relative md:z-0 transition-all duration-300`}
+        } sidebar fixed inset-y-0 left-0 z-40 flex min-w-0 shrink-0 flex-col md:relative md:z-0 transition-[transform,width] duration-300`}
       >
         {/* Logo */}
         <div className="flex items-center gap-3 border-b p-4" style={{ borderColor: "var(--line)" }}>
@@ -446,7 +446,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
         {/* Page content */}
         <div className={`flex-1 overflow-auto p-4 sm:p-6 lg:p-8 ${isBeekeeper ? "pb-20 md:pb-8" : ""}`}>
-          <div className="mx-auto max-w-6xl">{children}</div>
+          <div className="mx-auto max-w-6xl min-w-0">{children}</div>
         </div>
       </main>
 
