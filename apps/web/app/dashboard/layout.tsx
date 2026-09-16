@@ -25,7 +25,7 @@ import AppIcon, { type IconKey } from "@/components/icons/AppIcon";
 const BK_TABS: { icon: IconKey; path: string; key: string }[] = [
   { icon: "home", path: "/dashboard/beekeeper", key: "tab.home" },
   { icon: "hives", path: "/dashboard/beekeeper/hives", key: "tab.hives" },
-  { icon: "scan", path: "/scan", key: "tab.scan" }, // mobile: center, raised
+  { icon: "scan", path: "/dashboard/beekeeper/scan", key: "tab.scan" }, // mobile: center, raised
   { icon: "iot", path: "/dashboard/beekeeper/iot", key: "tab.iot" },
   { icon: "profile", path: "/dashboard/profile", key: "tab.profile" },
 ];
@@ -43,9 +43,9 @@ const NAV_ITEMS: Record<UserRole, { label: string; labelKey?: string; path: stri
   BEEKEEPER: [
     { label: "Home (होम)", path: "/dashboard/beekeeper", icon: "🏠" },
     { label: "My Hives (मेरे बक्से)", path: "/dashboard/beekeeper/hives", icon: "🐝" },
-    { label: "Log Harvest (शहद निकालें)", path: "/batches/create", icon: "🍯" },
+    { label: "Log Harvest (शहद निकालें)", path: "/dashboard/beekeeper/harvest", icon: "🍯" },
     { label: "Bee Doctor (रोग जांच)", path: "/dashboard/beekeeper/disease-guide", icon: "🩺" },
-    { label: "Scan QR (स्कैन)", path: "/scan", icon: "📱" },
+    { label: "Scan QR (स्कैन)", path: "/dashboard/beekeeper/scan", icon: "📱" },
   ],
   PROCESSOR: [
     { label: "Overview", path: "/dashboard/supply-chain", icon: "📊" },

@@ -289,7 +289,7 @@ export default function BeekeeperHivesPage() {
                   </Link>
 
                   <Link
-                    href="/batches/create"
+                    href="/dashboard/beekeeper/harvest"
                     className="flex-1 text-center py-2 px-2.5 rounded-xl text-[11px] font-bold text-white bg-amber-500 hover:bg-amber-600 transition-colors shadow-2xs"
                   >
                     🍯 Harvest

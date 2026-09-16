@@ -111,7 +111,7 @@ export default function BeekeeperDashboard() {
             </div>
           </div>
           <Link
-            href="/batches/create"
+            href="/dashboard/beekeeper/harvest"
             className="shrink-0 bg-white hover:bg-amber-50 text-amber-900 font-black text-xs sm:text-sm px-5 py-3 rounded-2xl transition-transform active:scale-95 shadow-md flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>🍯</span>
@@ -163,7 +163,7 @@ export default function BeekeeperDashboard() {
       <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Tile 1: Log Harvest */}
         <Link
-          href="/batches/create"
+          href="/dashboard/beekeeper/harvest"
           className="group relative p-5 rounded-3xl bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 text-white shadow-md hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer flex flex-col justify-between min-h-[140px]"
         >
           <div className="flex items-center justify-between">
@@ -333,7 +333,7 @@ export default function BeekeeperDashboard() {
                 <div className="mt-3 flex items-center gap-2">
                   {isReady ? (
                     <Link
-                      href="/batches/create"
+                      href="/dashboard/beekeeper/harvest"
                       className="btn-primary !min-h-[38px] flex-1 text-xs font-bold justify-center"
                     >
                       🍯 {isHi ? "शहद निकालें" : "Harvest"}

@@ -201,7 +201,7 @@ export default function BeekeeperBatchesPage() {
             Immutable blockchain records and QR verification passports
           </p>
         </div>
-        <Link href="/batches/create" className="btn-primary text-xs py-2 px-4 shadow-sm">
+        <Link href="/dashboard/beekeeper/harvest" className="btn-primary text-xs py-2 px-4 shadow-sm">
           + Create New Batch
         </Link>
       </div>
@@ -218,7 +218,7 @@ export default function BeekeeperBatchesPage() {
           <p className="text-xs text-gray-500 mb-4 max-w-sm mx-auto">
             You haven't harvested or registered any honey batches on the blockchain yet.
           </p>
-          <Link href="/batches/create" className="btn-primary text-xs py-2 px-5 shadow-sm">
+          <Link href="/dashboard/beekeeper/harvest" className="btn-primary text-xs py-2 px-5 shadow-sm">
             + Create New Batch
           </Link>
         </div>

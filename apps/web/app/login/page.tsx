@@ -112,24 +112,30 @@ export default function Login() {
               </span>
             </Link>
 
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 border border-white/25 text-xs font-semibold tracking-wide uppercase mb-3">
+              <span>🏛️</span>
+              <span>Ministry of MSME · KVIC Honey Mission</span>
+            </div>
+
             <h1 className="font-[family-name:var(--font-outfit)] text-3xl xl:text-4xl font-bold leading-tight">
-              Join India&apos;s largest blockchain-verified honey ecosystem.
+              Blockchain Honey Traceability & Smart Beekeeping
             </h1>
-            <p className="text-white/80 mt-2.5 text-sm leading-relaxed">
-              Sign in as a beekeeper, processor, lab officer, or retailer to participate in the transparent honey supply chain.
+            <p className="text-white/85 mt-2.5 text-sm leading-relaxed">
+              Problem Statement ID: 26021 — Supporting rural beekeepers with non-invasive acoustic disease detection, batch provenance, and consumer trust.
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-3">
             {[
-              { value: "1,248+", label: "Beekeepers" },
-              { value: "8,492", label: "Smart Hives" },
-              { value: "182T", label: "Honey Tracked" },
-              { value: "99.8%", label: "FSSAI Pass Rate" },
+              { value: "87.4%", label: "IEEE Bioacoustic ML", detail: "Varroa Mite ROC-AUC" },
+              { value: "₹1,100", label: "Solar IoT Hardware", detail: "Zero-Camera Hive Node" },
+              { value: "38", label: "KVIC Field Offices", detail: "MSME Cluster Network" },
+              { value: "< 20%", label: "FSSAI Compliance", detail: "Pure Moisture Standard" },
             ].map((stat) => (
-              <div key={stat.label} className="p-4 rounded-[var(--radius-lg)] bg-white/10 backdrop-blur-sm border border-white/15 shadow-xs">
+              <div key={stat.label} className="p-3.5 rounded-[var(--radius-lg)] bg-white/10 backdrop-blur-sm border border-white/15 shadow-xs">
                 <p className="text-xl font-bold font-[family-name:var(--font-outfit)]">{stat.value}</p>
-                <p className="text-xs text-white/70 mt-0.5">{stat.label}</p>
+                <p className="text-xs font-semibold text-white/90 mt-0.5">{stat.label}</p>
+                <p className="text-[10px] text-white/70 mt-0.5">{stat.detail}</p>
               </div>
             ))}
           </div>
