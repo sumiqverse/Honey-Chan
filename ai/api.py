@@ -11,6 +11,7 @@ from typing import Optional, List
 import uvicorn
 import math
 import os
+import random
 import numpy as np
 from datetime import datetime
 
@@ -321,12 +322,14 @@ def analyze_acoustics(req: AcousticAnalysisRequest):
     """UrBAN Dataset Acoustic Frequency Spectral Analyzer"""
     hz = req.acoustic_hz
     # Generate mock FFT spectral density data for waveform visualization
+    # Seeded per-request RNG: same frequency -> same spectrum (reproducible).
+    rng = random.Random(int(hz))
     fft_data = []
     for freq in range(0, 1000, 10):
         # Create a bell curve around the dominant frequency
         power = np.exp(-0.5 * ((freq - hz) / 30.0) ** 2) * 100
-        # Add some random noise
-        power += random.uniform(0, 15)
+        # Add reproducible noise
+        power += rng.uniform(0, 15)
         fft_data.append({"freq": freq, "power": round(min(100, power), 1)})
 
     if 200.0 <= hz <= 260.0:
@@ -446,7 +449,7 @@ def analyze_image(req: ImageAnalysisRequest):
             "detections": [
                 {"id": "q1", "label": "Active Queen Swarm Cell", "type": "queen", "x": 45, "y": 74, "width": 18, "height": 22, "confidence": 0.96},
                 {"id": "q2", "label": "Secondary Queen Cup", "type": "queen", "x": 68, "y": 70, "width": 15, "height": 19, "confidence": 0.92},
-                {"id": "q3", "label": "Dense Brood Cluster", "type": "brood", "x": 20, "y": 22, "width": 45, "height: 42, "confidence": 0.95},
+                {"id": "q3", "label": "Dense Brood Cluster", "type": "brood", "x": 20, "y": 22, "width": 45, "height": 42, "confidence": 0.95},
             ],
             "actionSteps": ["Perform colony split or add an extra honey super with drawn frames immediately."]
         }
