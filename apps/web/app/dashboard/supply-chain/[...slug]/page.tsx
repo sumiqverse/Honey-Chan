@@ -543,7 +543,7 @@ export function BatchTable({
 
             {/* Honey Spec Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4 bg-gray-50/60 rounded-xl p-3.5 border border-gray-100">
-              <div>
+              <div className="min-w-0">
                 <span className="text-[11px] font-medium text-gray-400 block mb-0.5">Honey Flora</span>
                 <p className="text-xs font-bold text-gray-900 flex items-center gap-1">
                   <span>🌼</span>
@@ -551,7 +551,7 @@ export function BatchTable({
                 </p>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <span className="text-[11px] font-medium text-gray-400 block mb-0.5">Intake Volume</span>
                 <p className="text-xs font-bold text-gray-900 flex items-center gap-1">
                   <span>⚖️</span>
@@ -559,7 +559,7 @@ export function BatchTable({
                 </p>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <span className="text-[11px] font-medium text-gray-400 block mb-0.5">Source Apiary & Hive</span>
                 <p className="text-xs font-bold text-gray-900 flex items-center gap-1">
                   <span>🐝</span>
@@ -567,7 +567,7 @@ export function BatchTable({
                 </p>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <span className="text-[11px] font-medium text-gray-400 block mb-0.5">Geographic Origin</span>
                 <p className="text-xs font-bold text-gray-900 flex items-center gap-1 truncate" title={batch.location}>
                   <span>📍</span>
@@ -748,25 +748,25 @@ function RetailInventoryPage({ batches, user, onRefresh }: { batches: any[]; use
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
+              <div className="min-w-0">
                 <label className="block text-xs font-semibold text-gray-700 mb-1">👤 Buyer / Customer Name</label>
                 <input
                   type="text"
                   placeholder="e.g. Mrs. Sunita Sharma"
                   value={buyerName}
                   onChange={(e) => setBuyerName(e.target.value)}
-                  className="border border-gray-200 rounded-xl px-4 py-2.5 w-full text-sm focus:outline-none focus:border-green-400"
+                  className="border border-gray-200 rounded-xl px-4 py-2.5 w-full text-sm focus:outline-none focus:border-green-400 min-w-0"
                 />
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <label className="block text-xs font-semibold text-gray-700 mb-1">🧾 Consumer Bill / Invoice Number</label>
                 <input
                   type="text"
                   placeholder="e.g. INV-2026-98765"
                   value={billNumber}
                   onChange={(e) => setBillNumber(e.target.value)}
-                  className="border border-gray-200 rounded-xl px-4 py-2.5 w-full text-sm focus:outline-none focus:border-green-400"
+                  className="border border-gray-200 rounded-xl px-4 py-2.5 w-full text-sm focus:outline-none focus:border-green-400 min-w-0"
                 />
               </div>
             </div>
