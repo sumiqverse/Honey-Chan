@@ -199,7 +199,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const navItems = NAV_ITEMS[user.role] || [];
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex min-h-screen bg-[var(--page)]">
       {/* Sidebar Overlay (Mobile) */}
       {sidebarOpen && (
         <div className="fixed inset-0 z-30 bg-black/20 md:hidden" onClick={() => setSidebarOpen(false)} />
@@ -207,9 +207,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
       {/* Sidebar */}
       <aside
-        className={`${
-          sidebarOpen ? "translate-x-0 w-64" : "-translate-x-full w-64 md:translate-x-0 md:w-[72px]"
-        } sidebar fixed inset-y-0 left-0 z-40 flex min-w-0 shrink-0 flex-col md:relative md:z-0 transition-[transform,width] duration-300`}
+        className={`${sidebarOpen ? "translate-x-0 w-64" : "-translate-x-full w-64 md:translate-x-0 md:w-[72px]"
+          } sidebar fixed inset-y-0 left-0 z-40 flex min-w-0 min-h-0 shrink-0 flex-col bg-[var(--page)] transition-transform duration-200 md:border-r border-gray-200 transform-gpu [backface-visibility:hidden] will-change-transform antialiased`}
       >
         {/* Logo */}
         <div className="flex items-center gap-3 border-b p-4" style={{ borderColor: "var(--line)" }}>
@@ -282,9 +281,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 key={item.path}
                 href={item.path}
                 title={!sidebarOpen ? label : undefined}
-                className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-all duration-200 ${
-                  isActive ? "font-bold" : "font-medium"
-                }`}
+                className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-all duration-200 ${isActive ? "font-bold" : "font-medium"
+                  }`}
                 style={
                   isActive
                     ? { background: "var(--bg-muted)", color: "var(--ink)" }
@@ -333,10 +331,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       </aside>
 
       {/* Main content */}
-      <main className="flex min-w-0 flex-1 flex-col overflow-hidden">
+      <main className="flex min-w-0 flex-1 flex-col md:ml-[72px]">
         {/* Top bar */}
         <header
-          className="sticky top-0 z-20 flex h-16 shrink-0 items-center justify-between border-b px-4 sm:px-6 lg:px-8 bg-white/95 backdrop-blur-md shadow-xs"
+          className="sticky top-0 z-20 flex h-16 shrink-0 items-center justify-between border-b px-4 sm:px-6 lg:px-8 bg-white shadow-xs transform-gpu [backface-visibility:hidden] will-change-transform antialiased"
           style={{ borderColor: "var(--line)" }}
         >
           <div className="flex items-center gap-3 sm:gap-4">
@@ -445,7 +443,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </header>
 
         {/* Page content */}
-        <div className={`flex-1 overflow-auto p-4 sm:p-6 lg:p-8 ${isBeekeeper ? "pb-20 md:pb-8" : ""}`}>
+        <div className={`flex-1 p-4 sm:p-6 lg:p-8 ${isBeekeeper ? "pb-20 md:pb-8" : ""}`}>
           <div className="mx-auto max-w-6xl min-w-0">{children}</div>
         </div>
       </main>
@@ -453,7 +451,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* Mobile Bottom Navigation Bar (Beekeeper quick-access on mobile) */}
       {isBeekeeper && (
         <nav
-          className="fixed bottom-0 inset-x-0 z-30 flex h-16 items-center justify-around border-t border-gray-200 bg-white/95 backdrop-blur-md px-2 md:hidden shadow-lg"
+          className="fixed bottom-0 inset-x-0 z-30 flex h-16 items-center justify-around border-t border-gray-200 bg-white px-2 md:hidden shadow-lg"
           aria-label={t("dashboardTitle")}
         >
           {BK_TABS.map((tab) => {
@@ -462,9 +460,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               <Link
                 key={tab.path}
                 href={tab.path}
-                className={`flex flex-col items-center justify-center gap-1 flex-1 py-1 text-[11px] font-medium transition-colors ${
-                  isActive ? "text-gray-900 font-bold" : "text-gray-500 hover:text-gray-800"
-                }`}
+                className={`flex flex-col items-center justify-center gap-1 flex-1 py-1 text-[11px] font-medium transition-colors ${isActive ? "text-gray-900 font-bold" : "text-gray-500 hover:text-gray-800"
+                  }`}
               >
                 <AppIcon name={tab.icon} size={20} ariaLabel="" />
                 <span>{t(tab.key)}</span>

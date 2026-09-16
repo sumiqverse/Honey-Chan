@@ -276,9 +276,8 @@ export default function BeeDoctorPage() {
           return (
             <Card
               key={disease.id}
-              className={`overflow-hidden transition-all border ${
-                isExpanded ? "border-[var(--honey-500)] shadow-sm" : "border-[var(--border-default)]"
-              }`}
+              className={`overflow-hidden transition-all border ${isExpanded ? "border-[var(--honey-500)] shadow-sm" : "border-[var(--border-default)]"
+                }`}
             >
               {/* Header */}
               <div
@@ -295,13 +294,12 @@ export default function BeeDoctorPage() {
                         {isHindi ? disease.nameHi : disease.name}
                       </h3>
                       <span
-                        className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
-                          disease.severity === "CRITICAL"
+                        className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${disease.severity === "CRITICAL"
                             ? "bg-red-100 text-red-800 border border-red-200"
                             : disease.severity === "HIGH"
-                            ? "bg-amber-100 text-amber-800 border border-amber-200"
-                            : "bg-blue-100 text-blue-800 border border-blue-200"
-                        }`}
+                              ? "bg-amber-100 text-amber-800 border border-amber-200"
+                              : "bg-blue-100 text-blue-800 border border-blue-200"
+                          }`}
                       >
                         {disease.severity}
                       </span>

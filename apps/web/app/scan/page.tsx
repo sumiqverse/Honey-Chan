@@ -44,7 +44,7 @@ export default function ScanPage() {
         router.push(lastDashboard);
         return;
       }
-    } catch {}
+    } catch { }
 
     // 3. If history length > 1, navigate back
     if (typeof window !== "undefined" && window.history.length > 1) {

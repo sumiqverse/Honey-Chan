@@ -48,7 +48,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="hi">
-      <body suppressHydrationWarning className={`${inter.variable} ${devanagari.variable} font-sans antialiased min-h-screen`}>
+      <body suppressHydrationWarning className={`${inter.variable} ${devanagari.variable} font-sans antialiased min-h-screen bg-[var(--page)] text-[var(--ink)]`}>
         <LanguageProvider>
           <AuthProvider>
             <RouteTracker />

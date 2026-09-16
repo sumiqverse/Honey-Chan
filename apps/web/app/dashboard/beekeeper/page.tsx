@@ -6,11 +6,11 @@ import { useAuth } from "@/hooks/useAuth";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { AudioSpeaker } from "@/components/ui/AudioSpeaker";
-import { 
-  ArrowRight, 
-  PhoneCall, 
-  CheckCircle2, 
-  AlertTriangle, 
+import {
+  ArrowRight,
+  PhoneCall,
+  CheckCircle2,
+  AlertTriangle,
   Sparkles,
   ExternalLink
 } from "lucide-react";
@@ -52,11 +52,11 @@ export default function BeekeeperDashboard() {
     ? harvestReadyHives.length > 0
       ? `नमस्ते ${user?.name || "रमेश जी"}। आपके पास कुल ${totalHives} बक्से हैं। बक्सा नंबर ${harvestReadyHives[0]?.hiveCode?.replace("HC-HIVE-", "") || "6"} में लगभग ${harvestReadyHives[0]?.latestReading?.weight || "38"} किलो शहद तैयार हो चुका है। आप आज शहद निकाल सकते हैं। बाकि सभी बक्से स्वस्थ और सुरक्षित हैं।`
       : alertHives.length > 0
-      ? `नमस्ते ${user?.name || "रमेश जी"}। आपके बक्से में तापमान अधिक है। कृपया छत्ते की जांच करें।`
-      : `नमस्ते ${user?.name || "रमेश जी"}। आपके सभी ${totalHives} बक्से पूरी तरह स्वस्थ और सुरक्षित हैं। किसी भी बक्से में कोई परेशानी नहीं है।`
+        ? `नमस्ते ${user?.name || "रमेश जी"}। आपके बक्से में तापमान अधिक है। कृपया छत्ते की जांच करें।`
+        : `नमस्ते ${user?.name || "रमेश जी"}। आपके सभी ${totalHives} बक्से पूरी तरह स्वस्थ और सुरक्षित हैं। किसी भी बक्से में कोई परेशानी नहीं है।`
     : harvestReadyHives.length > 0
-    ? `Welcome ${user?.name || "Ramesh"}. You have ${totalHives} hives. Hive ${harvestReadyHives[0]?.hiveCode || "HC-06"} has ripe honey ready for harvest. All other hives are healthy and safe.`
-    : `Welcome ${user?.name || "Ramesh"}. All your ${totalHives} hives are healthy and thriving today.`;
+      ? `Welcome ${user?.name || "Ramesh"}. You have ${totalHives} hives. Hive ${harvestReadyHives[0]?.hiveCode || "HC-06"} has ripe honey ready for harvest. All other hives are healthy and safe.`
+      : `Welcome ${user?.name || "Ramesh"}. All your ${totalHives} hives are healthy and thriving today.`;
 
   return (
     <div className="space-y-5 page-enter pb-12 max-w-5xl mx-auto">
@@ -101,8 +101,8 @@ export default function BeekeeperDashboard() {
                 </span>
               </div>
               <h2 className="text-base sm:text-lg font-bold mt-0.5">
-                {isHi 
-                  ? `बक्सा ${harvestReadyHives[0]?.hiveCode || "HC-06"} में शहद पक चुका है — आज ही निकालें!` 
+                {isHi
+                  ? `बक्सा ${harvestReadyHives[0]?.hiveCode || "HC-06"} में शहद पक चुका है — आज ही निकालें!`
                   : `Hive ${harvestReadyHives[0]?.hiveCode || "HC-06"} is ripe and ready for harvest!`}
               </h2>
               <p className="text-xs text-amber-100/90 mt-0.5">
@@ -130,8 +130,8 @@ export default function BeekeeperDashboard() {
                 {isHi ? "छत्ते की जांच आवश्यक है!" : "Hive Inspection Required!"}
               </h2>
               <p className="text-xs text-rose-100 mt-0.5">
-                {isHi 
-                  ? `बक्सा ${alertHives[0]?.hiveCode} में तापमान सामान्य से अधिक है।` 
+                {isHi
+                  ? `बक्सा ${alertHives[0]?.hiveCode} में तापमान सामान्य से अधिक है।`
                   : `Hive ${alertHives[0]?.hiveCode} has higher temperature.`}
               </p>
             </div>
@@ -276,11 +276,10 @@ export default function BeekeeperDashboard() {
             return (
               <div
                 key={hive.id || hive.hiveCode}
-                className={`p-4 rounded-2xl border-2 transition-all ${
-                  isReady
+                className={`p-4 rounded-2xl border-2 transition-all ${isReady
                     ? "bg-amber-50/50 border-amber-300 shadow-xs"
                     : "bg-gray-50/50 border-gray-200/80 hover:border-gray-300"
-                }`}
+                  }`}
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -416,8 +415,8 @@ export default function BeekeeperDashboard() {
               {isHi ? "KVIC मधुमक्खी मित्र हेल्पलाइन" : "KVIC Expert Kisan Helpline"}
             </h3>
             <p className="text-xs text-emerald-200 mt-0.5">
-              {isHi 
-                ? "मुफ्त सलाह, बॉक्स सब्सिडी व बीमारी के देसी इलाज के लिए फोन करें" 
+              {isHi
+                ? "मुफ्त सलाह, बॉक्स सब्सिडी व बीमारी के देसी इलाज के लिए फोन करें"
                 : "Toll-free assistance for box migration, subsidies & disease prevention"}
             </p>
           </div>
