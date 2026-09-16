@@ -41,12 +41,11 @@ const NAV_ITEMS: Record<UserRole, { label: string; labelKey?: string; path: stri
     { label: "Analytics", path: "/dashboard/admin/analytics", icon: "📈" },
   ],
   BEEKEEPER: [
-    { label: "Overview", labelKey: "tab.home", path: "/dashboard/beekeeper", icon: "📊" },
-    { label: "My Hives", labelKey: "tab.hives", path: "/dashboard/beekeeper/hives", icon: "🐝" },
-    { label: "Honey Batches", labelKey: "tab.batches", path: "/dashboard/beekeeper/batches", icon: "🍯" },
-    { label: "IoT Sensors", labelKey: "tab.iot", path: "/dashboard/beekeeper/iot", icon: "📡" },
-    { label: "AI Advisory", labelKey: "tab.ai", path: "/dashboard/beekeeper/ai", icon: "🧠" },
-    { label: "Scan QR", labelKey: "tab.scan", path: "/scan", icon: "📱" },
+    { label: "Home (होम)", path: "/dashboard/beekeeper", icon: "🏠" },
+    { label: "My Hives (मेरे बक्से)", path: "/dashboard/beekeeper/hives", icon: "🐝" },
+    { label: "Log Harvest (शहद निकालें)", path: "/batches/create", icon: "🍯" },
+    { label: "Bee Doctor (रोग जांच)", path: "/dashboard/beekeeper/disease-guide", icon: "🩺" },
+    { label: "Scan QR (स्कैन)", path: "/scan", icon: "📱" },
   ],
   PROCESSOR: [
     { label: "Overview", path: "/dashboard/supply-chain", icon: "📊" },
@@ -361,27 +360,34 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               {user.role === "BEEKEEPER" ? t("dashboardTitle") : ROLE_NAMES[user.role]}
             </h1>
 
-            <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-gray-50/90 text-xs font-medium text-gray-700">
-              <span className="text-gray-500">{t("iotActive")}:</span>
-              {wallet.isConnected ? (
-                wallet.isCorrectNetwork ? (
-                  <span className="flex items-center gap-1.5 font-semibold text-emerald-700">
-                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                    Sepolia
-                  </span>
+            {user.role === "BEEKEEPER" ? (
+              <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-200 bg-emerald-50/90 text-xs font-semibold text-emerald-800">
+                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>KVIC Sonipat Node · Active 🟢</span>
+              </div>
+            ) : (
+              <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-gray-50/90 text-xs font-medium text-gray-700">
+                <span className="text-gray-500">{t("iotActive")}:</span>
+                {wallet.isConnected ? (
+                  wallet.isCorrectNetwork ? (
+                    <span className="flex items-center gap-1.5 font-semibold text-emerald-700">
+                      <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                      Sepolia
+                    </span>
+                  ) : (
+                    <span className="flex items-center gap-1.5 font-semibold text-rose-600">
+                      <span className="h-2 w-2 rounded-full bg-rose-500" />
+                      Wrong Network
+                    </span>
+                  )
                 ) : (
-                  <span className="flex items-center gap-1.5 font-semibold text-rose-600">
-                    <span className="h-2 w-2 rounded-full bg-rose-500" />
-                    Wrong Network
+                  <span className="flex items-center gap-1.5 font-medium text-gray-500">
+                    <span className="h-2 w-2 rounded-full bg-gray-400" />
+                    Disconnected
                   </span>
-                )
-              ) : (
-                <span className="flex items-center gap-1.5 font-medium text-gray-500">
-                  <span className="h-2 w-2 rounded-full bg-gray-400" />
-                  Disconnected
-                </span>
-              )}
-            </div>
+                )}
+              </div>
+            )}
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
